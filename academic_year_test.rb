@@ -14,8 +14,8 @@ class TestAcademicYear < Minitest::Test
   	
   def test_initialize_works_with_no_args
     this_year = AcademicYear.new
-    assert_equal Date.new(2017,8,1), this_year.start_date
-    assert_equal Date.new(2018,7,31), this_year.end_date
+    assert_equal Date.new(2018,8,1), this_year.start_date
+    assert_equal Date.new(2019,7,31), this_year.end_date
   end
     	
   def test_initialize_works_with_args
@@ -27,9 +27,9 @@ class TestAcademicYear < Minitest::Test
   def test_for_current_year_method_includes?
     this_year = AcademicYear.new
     assert this_year.includes? Date.today
-    assert this_year.includes?(Date.new(2017,12,5))
-    assert !this_year.includes?(Date.new(2017,4,5))
-    assert !this_year.includes?(Date.new(2018,12,5))
+    assert this_year.includes?(Date.new(2019,1,5))
+    assert !this_year.includes?(Date.new(2018,4,5))
+    assert !this_year.includes?(Date.new(2019,12,5))
   end
   	
   def test_for_past_years_method_includes?
